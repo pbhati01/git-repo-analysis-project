@@ -72,11 +72,11 @@ export const fetchReadmeContent = (data) => {
     dataService
     .fetchReadmeContent(data)
     .then(res => {
-        dispatch(updateReadmeContent({...data, readmeContent: res.readmeContent}));
-        dispatch(showModal({
-          title: 'Readme.md',
-          content: ReactHtmlParser(res.readmeContent)
-        }));
+      dispatch(updateReadmeContent({...data, readmeContent: res.data}));
+      dispatch(showModal({
+        title: 'Readme.md',
+        content: ReactHtmlParser(res.data)
+      }));
     })
     .catch(err => {
       const { status } = err.response;
