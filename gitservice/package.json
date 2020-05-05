@@ -1,0 +1,21 @@
+{
+  "name": "gitservice",
+  "version": "1.0.0",
+  "description": "Git service to access git api",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "mocha ./test/*.js",
+    "lint": "node_modules/.bin/eslint './**/*.js'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ljharb/eslint-config": "^13.1.1",
+    "axios": "^0.19.2",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "supertest": "^4.0.2"
+  }
+}

@@ -1,0 +1,8 @@
+const server = require('../app.js');
+const { serverConfig } = require('../config');
+// the port has to come from config file (or) as a env variable
+const port = (process.env.PORT || serverConfig.port);
+
+server.listen(port, () => {
+    console.log(` server is listening on ${port} `);
+});
