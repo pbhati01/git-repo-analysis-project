@@ -15,6 +15,5 @@ export const getSortedRepoData = state => {
         }
         return 0;
     });
-    console.log('modifiedData', modifiedData);
     return modifiedData;
 };

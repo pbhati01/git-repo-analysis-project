@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { createUseStyles } from 'react-jss';
 import { Form, Button } from 'react-bootstrap';
 import { dataActions } from '../../redux/actions';
+import { getSortedRepoData } from '../../redux/selectors';
 import styles from './UserInputForm.styles';
 
 const useStyles = createUseStyles(styles);
@@ -11,7 +12,8 @@ const UserInputForm = () => {
   const classes = useStyles();
   const [ownerId, setOwnerId] = useState('');
   const [repoName, setRepoName] = useState('');
-  const repoData = useSelector(state => state.repoData);
+  const sortedRepoData = useSelector(getSortedRepoData);
+
   const dispatch = useDispatch();
 
   const handleOwnerChange = (e) => {
@@ -23,7 +25,7 @@ const UserInputForm = () => {
   };
 
   const getRepoData = () => {
-    const seq = Object.keys(repoData).length;
+    const seq = sortedRepoData.length;
     dispatch(dataActions.fetchRepoData({ ownerId, repoName, seq }));    
   }
 
