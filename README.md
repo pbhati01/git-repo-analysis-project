@@ -1,7 +1,8 @@
 ## Git Repo Analysis Project
 
 **This application is to analyse github public repositories and created with MERN stack.**
-This application inclueds following features:
+
+This includes following features:
 
 * A form to submit a GitHub repository for analysis (i.e., owner and repository name)
 * A table showing the past analysis results of the logged in user in reverse chronological order
